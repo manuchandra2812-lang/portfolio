@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj L E | Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        /* Header / Navigation */
+        header {
+            background: #1a252f;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #00bc8c 3px solid;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+            float: right;
+            margin-top: 10px;
+        }
+
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #brand {
+            float: left;
+        }
+
+        header #brand h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(26, 37, 47, 0.9), rgba(26, 37, 47, 0.9)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            color: #00bc8c;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #00bc8c;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            color: #1a252f;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #00bc8c;
+            margin-top: 5px;
+        }
+
+        /* Education & Skills Section */
+        #edu-skills {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #1a252f;
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #eef2f3;
+            color: #1a252f;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: 500;
+            border-left: 3px solid #00bc8c;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #f4f7f6;
+            border-top: 4px solid #00bc8c;
+            padding: 25px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 0;
+            background: #1a252f;
+            color: #fff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: #00bc8c;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 20px;
+            display: inline-block;
+        }
+
+        .contact-info p {
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #111a22;
+            color: #7f8c8d;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            header #brand, header ul, header li {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+            header ul {
+                margin-top: 15px;
+                padding-bottom: 15px;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            .about-content {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div id="brand">
+                <h1>Manoj L E</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#edu-skills">Education & Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Manoj L E</h1>
+            <p>Computer Science Student | Artificial Intelligence & Data Science</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <img src="profile.jpg" alt="Manoj L E" class="profile-img" onerror="this.src='https://via.placeholder.com/250?text=Profile+Photo'">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I am Manoj L E, currently residing in Bangalore. I completed my pre-university course (PUC) in Mangalore, which built my foundation before entering higher education. I am passionate about technology, AI, and data-driven systems.</p>
+                    <br>
+                    <p><strong>Hobbies:</strong> When I'm not coding or studying, you can find me playing cricket or gaming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="edu-skills">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h2>Education</h2>
+                        <hr style="border: 1px solid #00bc8c; margin: 10px 0 20px 0; width: 50px;">
+                        
+                        <h4 style="color:#00bc8c;">B. Tech in Artificial Intelligence and Data Science</h4>
+                        <p><strong>University:</strong> Reva University, Bangalore (560064)</p>
+                        <p><strong>Current Status:</strong> 2nd Semester Student</p>
+                        
+                        <br>
+                        
+                        <h4 style="color:#00bc8c;">Pre-University Course (PUC)</h4>
+                        <p><strong>College:</strong> SDM PU College, Mangalore</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <h2>Skills</h2>
+                        <hr style="border: 1px solid #00bc8c; margin: 10px 0 20px 0; width: 50px;">
+                        
+                        <h3 style="font-size: 16px; margin-bottom: 10px;">Technical</h3>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Advanced C</span>
+                        
+                        <h3 style="font-size: 16px; margin: 20px 0 10px 0;">Professional / Soft Skills</h3>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Team Work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects & Certifications</h2>
+            <hr style="border: 1px solid #00bc8c; margin: 10px 0 20px 0; width: 50px;">
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Smart AI Food Spoilage Detector</h3>
+                    <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 10px;">Artificial Intelligence / Core System</p>
+                    <p>Designed a machine learning or data-driven solution tailored to identify food quality, freshness levels, and early-stage spoilage parameters.</p>
+                </div>
+                <div class="project-card">
+                    <h3>2D Graphics Editor</h3>
+                    <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 10px;">C Programming</p>
+                    <p>Developed an interactive, menu-driven structural graphics application leveraging native C concepts to render custom 2D elements.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Cybercrime Report</h3>
+                    <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 10px;">Research / Threat Analysis</p>
+                    <p>Conducted a structured deep-dive project on emerging modern cybersecurity vulnerabilities, incident tracking methodologies, and mitigation architecture.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #1a252f;">Achievements & Certifications</h3>
+            <ul style="margin-top: 15px; margin-left: 20px; line-height: 2;">
+                <li><strong>IBM Skilled:</strong> Completed structured online courses and received corresponding professional credentials.</li>
+                <li><strong>Instagram Design System:</strong> Finished subject-matter training detailing core interface frameworks and UI patterns.</li>
+                <li><strong>Wadhwani Foundation:</strong> Earned validation and certified credentials for professional development and foundation mastery.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="margin-bottom: 30px; color: #b4bcc2;">Feel free to reach out for collaborations or academic inquiries.</p>
+            <div class="contact-info">
+                <a href="mailto:manuchandra2812@gmail.com">📩 manuchandra2812@gmail.com</a>
+                <a href="tel:+917676397064">📞 +91 7676397064</a>
+                <p style="color: #7f8c8d; margin-top: 30px;">Location: Bangalore, Karnataka, India</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Manoj L E. Built for Academic Portfolio Assignment.</p>
+    </footer>
+
+</body>
+</html>
